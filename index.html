@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+     <input type="text" name="name" id="name">
+     <a href="demo.html">Log</a>
+     <script type="text/javascript">
+     	var myStorage = window.localStorage;
+        var namefield = document.getElementById("name");
+        namefield.onchange = function(){
+        	myStorage.setItem("name",namefield.value);
+        }
+     </script>
+</body>
+
+</html>
