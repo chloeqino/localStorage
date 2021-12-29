@@ -34,38 +34,9 @@
     for(let i=0;i<names.length;i++){
       names[i].textContent = fullname.first+" "+fullname.last;
     }
-	var video = document.querySelector("#videoElement");
-function start(){
-if (navigator.mediaDevices.getUserMedia) {
-  navigator.mediaDevices.getUserMedia({ video: true })
-    .then(function (stream) {
-      video.srcObject = stream;
-    })
-    .catch(function (err0r) {
-      console.log("Something went wrong!");
-    });
-}
-}
-function stop(e) {
-  var stream = video.srcObject;
-  var tracks = stream.getTracks();
 
-  for (var i = 0; i < tracks.length; i++) {
-    var track = tracks[i];
-    track.stop();
-  }
-  video.srcObject = null;
-}
-function control(e){
- let status = e.textContent;
- if(status=="Start"){
- 	e.textContent = "Stop";
- 	start();
- }else{
- 	e.textContent = "Start";
- 	stop();
- }
-}
+
+
 </script>
 </body>
 </html>
