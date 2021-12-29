@@ -8,13 +8,26 @@
 	<title></title>
 </head>
 <body>
-     <input type="text" name="name" id="name">
+   <label for="fname">first name</label>
+     <input type="text" name="name" id="fname"><br>
+     <label for="lname">last name</label>
+     <input type="text" name="name" id="lname">
      <a href="demo.html">Log</a>
      <script type="text/javascript">
      	var myStorage = window.localStorage;
-        var namefield = document.getElementById("name");
-        namefield.onchange = function(){
-        	myStorage.setItem("name",namefield.value);
+        var firstname = document.getElementById("fname");
+        var lastname = document.getElementById("lname");
+        var fullname = {};
+        fullname["first"] = "";
+        fullname["last"] = "";
+        firstname.onchange = function(){
+           fullname["first"] = firstname.value;
+        	myStorage.setItem("fullname",JSON.stringify(fullname));
+        }
+        lastname.onchange = function(){
+           fullname["last"] = lastname.value;
+        	myStorage.setItem("fullname",JSON.stringify(fullname));
+           console.log(fullname);
         }
      </script>
 </body>

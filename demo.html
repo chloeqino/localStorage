@@ -29,10 +29,10 @@
 <script type="text/javascript">
 	var myStorage = window.localStorage;
 	//myStorage.setItem("name","Qinyu");
-	console.log(myStorage);
+	var fullname = JSON.parse(myStorage.fullname);
    var names = document.getElementsByClassName("name")
     for(let i=0;i<names.length;i++){
-      names[i].textContent = myStorage.name;
+      names[i].textContent = fullname.first+" "+fullname.last;
     }
 	var video = document.querySelector("#videoElement");
 function start(){
