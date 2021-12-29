@@ -18,8 +18,16 @@
         var firstname = document.getElementById("fname");
         var lastname = document.getElementById("lname");
         var fullname = {};
+        console.log(myStorage.getItem("fullname"));
         fullname["first"] = "";
         fullname["last"] = "";
+        if(myStorage.getItem("fullname")){
+           fullname = JSON.parse(myStorage.fullname);
+           firstname.value = fullname.first;
+           lastname.value = fullname.last;
+        }
+
+        
         firstname.onchange = function(){
            fullname["first"] = firstname.value;
         	myStorage.setItem("fullname",JSON.stringify(fullname));
